@@ -3,7 +3,19 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  books: [
+    {
+      titulo:"La iliada",
+      slug: "Iliada",
+      autor: "Homero"
+    },
+    {
+      titulo:"El Lazarillo de Tormes",
+      slug: "Lazarillo-de-Tormes",
+      autor: "Anonimo"
+    }
+  ]
 };
 
 /*
