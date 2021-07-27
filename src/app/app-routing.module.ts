@@ -10,6 +10,7 @@ const routes: Routes = [{
   { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
   { path: 'books', loadChildren: () => import('./books/books.module').then(m => m.BooksModule) },
   { path : 'not-found', component: NotFoundComponent},
+  { path: 'contactos', loadChildren: () => import('./contactos/contactos.module').then(m => m.ContactosModule) },
   { path : '**', redirectTo: 'not-found'}
 ];
 

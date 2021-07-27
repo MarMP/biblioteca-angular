@@ -1,0 +1,116 @@
+<section>
+    <header>
+        <h2>
+            {{encabezado}}
+        </h2>
+        <p>
+            {{descripcion | uppercase}}
+        </p>
+    </header>
+    <p>Numero de contacto que tenemos: <mark>{{numeroContactos}}</mark></p>
+
+    <input
+        value="Mostrar formulario"
+        type="button"
+        (click) = "formHidden=false"
+    />
+    <input
+        value="Ocultar formulario"
+        type="button"
+        (click) = "formHidden=true"
+    />
+
+    <form [ngClass]="{'hidden':formHidden}">
+
+        <fieldset>
+            <legend>
+                Formulario de contacto
+            </legend>
+
+            <div>
+                <label for="name">Nombre</label>
+                <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder="Introduce tu nombre "
+                    [(ngModel)]="datosFormularioContacto.nombre"
+                />
+            </div>
+
+            <div>
+                <label for="vip">¿Es vip?</label>
+                <input
+                    name="vip"
+                    id="vip"
+                    type="checkbox"
+                    [(ngModel)]="datosFormularioContacto.isVip"
+                />
+            </div>
+
+            <div>
+                <label for="genero">Genero</label>
+                <input
+                    name="genero"
+                    id="genero"
+                    value="H"
+                    type="radio"
+                    [(ngModel)]="datosFormularioContacto.genero"
+                />
+                <i>Hombre</i>
+
+                <input
+                name="genero"
+                id="genero"
+                value="M"
+                type="radio"
+                [(ngModel)]="datosFormularioContacto.genero"
+                />
+                <i>Mujer</i>
+
+                <input
+                name="genero"
+                id="genero"
+                value="O"
+                type="radio"
+                [(ngModel)]="datosFormularioContacto.genero"
+                />
+                <i>Otros</i>
+            </div>
+
+            <div>
+                <label for="estadoLaboral">Estado Laboral </label>
+                <select name="estadoLaboral" id="estadoLaboral">
+                  <option *ngFor="let estado of estadosLaborales">
+                      {{estado.descripcion}}
+                  </option>
+                </select>
+            </div>
+            
+            <div *ngIf="datosFormularioContacto.estadoLaboral==2; else no_trabajo">
+                <label for="empresa">Empresa donde trabajas</label>
+                <input 
+                    name="empresa"
+                    id="empresa"
+                    type="text"
+                    [(ngModel)]="datosFormularioContacto.empresa"
+
+                />
+            </div>
+
+            <ng-template #no_trabajo>
+                <h1>Buscate un trabajo</h1>
+            </ng-template>
+
+            <input 
+                type="button" 
+                value="Guardar"
+                (click)="guardarContacto()"
+            />
+
+        </fieldset>
+      
+    </form>
+
+    <pre>{{datosFormularioContacto | json}}</pre>
+</section>>
