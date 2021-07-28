@@ -108,9 +108,44 @@
                 (click)="guardarContacto()"
             />
 
+        
+            <input [ngClass]="{'hidden':!editando}"
+            type="button" 
+            id="nuevoRegistro"
+            name="nuevoRegistro"
+            value="Nuevo Registro"
+            (click)="nuevoRegistro()"
+            
+            />
+
+            <input [ngClass]="{'hidden':!editando}"
+            type="button" 
+            id="descartar"
+            name="descartar"
+            value="Descartar"
+            (click)="descartarCambios()"
+            
+            />
+
         </fieldset>
       
     </form>
+
+    <ul *ngIf="listaContactos.length > 0; else vacia">
+        <li *ngFor="let contacto of listaContactos">
+            Nombre:<span>{{contacto.nombre}}</span>
+            <input type="button" id="borrar" name="borrar" value="Borrar"
+            (click)="borrarContacto(contacto)"
+            />
+            <input type="button" id="editar" name="editar" value="Editar"
+            (click)="editarContacto(contacto)"
+            />
+        </li>
+    </ul>
+
+    <ng-template #vacia>
+        <h1>No tenemos contactos todavia</h1>
+    </ng-template>
 
     <pre>{{datosFormularioContacto | json}}</pre>
 </section>>
