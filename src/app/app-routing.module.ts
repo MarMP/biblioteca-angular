@@ -12,6 +12,7 @@ const routes: Routes = [{
   { path : 'not-found', component: NotFoundComponent},
   { path: 'contactos', loadChildren: () => import('./contactos/contactos.module').then(m => m.ContactosModule) },
   { path: 'car', loadChildren: () => import('./car/car.module').then(m => m.CarModule) },
+  { path: 'conversion', loadChildren: () => import('./conversion/conversion.module').then(m => m.ConversionModule) },
   { path : '**', redirectTo: 'not-found'}
 ];
 

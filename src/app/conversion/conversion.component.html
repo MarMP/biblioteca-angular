@@ -1,0 +1,23 @@
+<form>
+    <fieldset>
+        <label for="litros">Litros</label>
+        <input 
+        type="number"
+        name="litros"
+        id="litros"
+        placeholder="0"
+        [(ngModel)]="litros"
+
+        />
+
+        <input 
+        type="button"
+        name="convertir"
+        value="Convertir"
+        (click)="convertir()"
+        />
+    </fieldset>
+</form>
+
+<h1>Resultado de la conversion</h1>
+<p>{{pintas | number:'1.2-2'}}</p>
