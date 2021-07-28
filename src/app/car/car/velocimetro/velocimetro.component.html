@@ -1,0 +1,18 @@
+<article>
+
+    <header>
+        <h2>
+            velocidad actual
+        </h2>
+    </header>
+    <p>
+       Velocidad de car dentro del componente velocimetro {{velocidad | number:'1.0-0'}}
+    </p>
+    <p>
+        Velocidad maxima: {{velocidadMaxima | number:'1.2-2'}}
+    </p>
+    <progress [value] = "velocidad"
+    [max] = "velocidadMaxima">
+
+    </progress>
+</article>

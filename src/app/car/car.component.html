@@ -1,0 +1,16 @@
+<header>
+    <h1>Mi automovil</h1>
+    <p>{{coche.velocidad}}</p>
+</header>
+<app-velocimetro 
+    [velocidad] ="coche.velocidad"
+    [velocidadMaxima] = "coche.velocidadMaxima"
+    
+    >
+</app-velocimetro>
+
+<app-pedales 
+    (acelerar) ="onAcelerar($event)"
+    (frenar) ="onFrenar($event)"
+
+></app-pedales>

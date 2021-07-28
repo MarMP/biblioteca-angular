@@ -11,6 +11,7 @@ const routes: Routes = [{
   { path: 'books', loadChildren: () => import('./books/books.module').then(m => m.BooksModule) },
   { path : 'not-found', component: NotFoundComponent},
   { path: 'contactos', loadChildren: () => import('./contactos/contactos.module').then(m => m.ContactosModule) },
+  { path: 'car', loadChildren: () => import('./car/car.module').then(m => m.CarModule) },
   { path : '**', redirectTo: 'not-found'}
 ];
 
