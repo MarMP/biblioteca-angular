@@ -1,0 +1,24 @@
+<section>
+    <header>
+        <h1>Conversor de medidas</h1>
+        <h3>Convirtiendo de origen {{origen}} a destino {{destino}}</h3>
+    </header>
+    <form>
+        <fieldset>
+            <div>
+                <label for="unidadesOrigen">Origen</label>
+                <input 
+                    type="number"
+                    name="unidadesOrigen"
+                    id="unidadesOrigen"
+                    [(ngModel)]="unidadesOrigen"
+
+                />
+            </div>
+        </fieldset>
+        <input type="button" value="Convertir" (click)="convertir()" />
+    </form>
+    <div>
+        Resultado: {{unidadesDestino | number:'1.2-2'}}
+    </div>
+</section>>
